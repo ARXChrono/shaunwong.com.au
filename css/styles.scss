@@ -18,15 +18,15 @@
 ::selection {
   background: var(--gold);
   color: var(--gray);
+  -webkit-text-fill-color: var(--gray);
 }
 
 body {
   position: relative;
   color: var(--color-primary);
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: "Roboto Mono", source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -35,10 +35,18 @@ body {
 
 h1,
 h2 {
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   text-transform: uppercase;
+}
+
+h2,
+.wtgrad {
+  background: linear-gradient(rgb(255, 255, 255), rgb(221, 221, 221));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h1 {
@@ -59,19 +67,32 @@ section {
   margin: 0 auto;
   max-width: 760px;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 
+code {
+  font-family: "Roboto Mono", source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
+}
+.img-wrap {
+  margin-top: 2rem;
+  display: flex;
+}
 .photo {
   width: 150px;
   max-width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 50% 0 0 50%;
   filter: saturate(0);
-  margin-top: 2rem;
   user-select: none;
   pointer-events: none;
+}
+.icons {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  padding: 0;
+  //todo: add icons
+  span {
+    margin-right: 0.5rem;
+  }
 }
 
 .gold {
@@ -83,9 +104,13 @@ code {
   body {
     font-size: 18px;
   }
+  .img-wrap {
+    flex-direction: column;
+  }
   .photo {
     width: 450px;
     margin-top: 5rem;
+    margin-left: auto;
   }
   h1 {
     font-size: 2.5rem;
@@ -333,8 +358,11 @@ code {
   margin: 1em 0 0 0.75em;
 }
 
-.desc-ul li {
-  padding: 0 0 0.25rem;
+.desc-ul {
+  list-style: square;
+  li {
+    padding: 0 0 0.25rem;
+  }
 }
 
 /* ================ Timeline Media Queries ================ */
@@ -383,9 +411,7 @@ code {
     width: 12px;
     height: 12px;
     margin-left: -9px;
-    background: #fff;
     border-radius: 10px;
-    border: 4px solid rgb(255, 80, 80);
     z-index: 10;
   }
 
