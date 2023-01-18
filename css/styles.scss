@@ -9,13 +9,21 @@
   --link: gold;
   --link-hover: rgb(255, 232, 104);
   --timeline-flag: var(--gold);
+  --timeline-flag-dot: var(--white);
   --timeline-flag-text: var(--gray);
+  --timeline-time: var(--gray);
+  --timeline-time-text: var(--white);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--gray);
 }
 
 body {
   position: relative;
   color: var(--color-primary);
-  background-color: var(--color-secondary);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
@@ -24,22 +32,33 @@ body {
   font-size: 16px;
   line-height: 1.6;
 }
+
 h1,
 h2 {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
 }
 
 h1 {
   font-size: 2rem;
 }
 
-section {
-  padding: 0 2rem 2rem;
-  max-width: 760px;
+a {
+  color: var(--link);
+  transition: color 0.25s ease;
+  &:hover,
+  &:focus {
+    color: var(--link-hover);
+  }
 }
 
+section {
+  padding: 0 2rem 2rem;
+  margin: 0 auto;
+  max-width: 760px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -51,19 +70,12 @@ code {
   border-radius: 0.5rem;
   filter: saturate(0);
   margin-top: 2rem;
+  user-select: none;
+  pointer-events: none;
 }
 
 .gold {
   color: gold;
-}
-
-a {
-  color: var(--link);
-}
-
-a:hover,
-a:focus {
-  color: var(--link-hover);
 }
 
 @media only screen and (min-width: 35em) {
@@ -73,35 +85,55 @@ a:focus {
   }
   .photo {
     width: 450px;
+    margin-top: 5rem;
   }
   h1 {
     font-size: 2.5rem;
   }
 }
 
+/* Background Anim */
 .blob {
   position: absolute;
   opacity: 0.025;
   max-height: 100%;
-  width: 100%;
+  width: 50%;
   user-select: none;
   pointer-events: none;
   height: 100%;
+  max-width: 100%;
+
+  @media screen and (max-width: 660px) {
+    width: 100%;
+  }
+
+  &.b1 {
+    top: 0;
+    right: 0;
+  }
+
+  &.b2 {
+    transform: scale(-1);
+    left: 0;
+  }
+
+  path {
+    animation: blob 80s linear infinite, rotate 80s linear infinite;
+  }
 }
 
-.blob path {
-  animation: blob 60s linear infinite;
-  transform: scale(0.7);
-}
-
-.b1 {
-  top: 0;
-  right: 0;
-}
-
-.b2 {
-  transform: scale(-1);
-  left: 0;
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    border-color: #ec0d0d;
+  }
+  50% {
+    border-color: #f4c01c;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-color: #ec0d0d;
+  }
 }
 
 @keyframes blob {
@@ -131,6 +163,8 @@ a:focus {
     );
   }
 }
+
+/* Timeline */
 
 .timeline {
   position: relative;
@@ -190,7 +224,6 @@ a:focus {
 .flag-wrapper {
   position: relative;
   display: inline-block;
-
   text-align: center;
 }
 
@@ -231,7 +264,7 @@ a:focus {
   margin-top: -10px;
   background: #fff;
   border-radius: 10px;
-  border: 4px solid rgb(255, 80, 80);
+  border: 4px solid var(--timeline-flag-dot);
   z-index: 10;
 }
 
@@ -271,7 +304,7 @@ a:focus {
   display: inline;
   line-height: 1em;
   font-size: 0.66666em;
-  color: rgb(250, 80, 80);
+  color: var(--timeline-time-text);
   vertical-align: middle;
 }
 
@@ -286,12 +319,11 @@ a:focus {
 .time {
   display: inline-block;
   padding: 4px 6px;
-  background: rgb(248, 248, 248);
+  background: var(--timeline-time);
 }
 
 .desc {
   margin: 1em 0.75em 0 0;
-
   font-size: 0.77777em;
   font-style: italic;
   line-height: 1.5em;
@@ -299,6 +331,10 @@ a:focus {
 
 .direction-r .desc {
   margin: 1em 0 0 0.75em;
+}
+
+.desc-ul li {
+  padding: 0 0 0.25rem;
 }
 
 /* ================ Timeline Media Queries ================ */
@@ -328,6 +364,13 @@ a:focus {
   .flag {
     background: var(--timeline-flag);
     z-index: 15;
+  }
+
+  .desc-ul {
+    font-style: normal;
+    li {
+      padding: 0 0 0.25rem;
+    }
   }
 
   .direction-l .flag:before,
@@ -394,14 +437,6 @@ a:focus {
     position: relative;
     margin: 1em 1em 0 1em;
     padding: 1em;
-
     z-index: 15;
-  }
-}
-
-@media screen and (min-width: 400px ?? max-width: 660px) {
-  .direction-l .desc,
-  .direction-r .desc {
-    margin: 1em 4em 0 4em;
   }
 }
