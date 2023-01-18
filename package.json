@@ -1,10 +1,14 @@
 {
   "name": "shaunwongcomau",
   "version": "0.0.1",
-  "description": "",
-  "keywords": "",
+  "description": "Personal Website",
+  "keywords": [
+    "Personal Portfolio",
+    "Front-end Developer",
+    "Front-end Engineer"
+  ],
   "license": "",
-  "author": "",
+  "author": "Shaun Wong",
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
