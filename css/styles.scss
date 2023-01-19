@@ -133,10 +133,16 @@ code {
   width: 100%;
   justify-content: right;
   padding: 0;
-  padding-left: 1rem;
+  align-items: flex-end;
   a {
     font-weight: 500;
     margin-right: 1.5rem;
+    padding: 0 1rem;
+    font-weight: 600;
+    &:hover,
+    &:focus {
+      transform: scale(1.1) translateX(-1rem);
+    }
   }
 }
 
@@ -167,6 +173,13 @@ code {
     padding-left: 0;
     span:last-child {
       margin-right: 0;
+    }
+    a {
+      padding: 0;
+      &:hover,
+      &:focus {
+        transform: scale(1.1) translateX(0rem);
+      }
     }
   }
 }
