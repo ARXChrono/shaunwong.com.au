@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Rubik:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik:wght@700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -71,8 +71,18 @@
     <section id="about">
       <div class="img-wrap">
         <picture class="me">
-          <source srcset="img/photo.webp" type="image/webp" />
-          <source srcset="img/photo.jpg" type="image/jpeg" />
+          <source
+            srcset="img/photo.webp"
+            media="(min-width: 600px)"
+            type="image/webp"
+          />
+          <source
+            srcset="img/photo.jpg"
+            media="(min-width: 600px)"
+            type="image/jpeg"
+          />
+          <source srcset="img/photo-m.webp" type="image/webp" />
+          <source srcset="img/photo-m.jpg" type="image/jpeg" />
           <img class="photo" src="img/photo.jpg" alt="portrait" />
         </picture>
         <div class="icons">
