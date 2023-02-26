@@ -186,6 +186,7 @@ code {
     font-size: 18px;
   }
   .img-wrap {
+    margin-top: 0rem;
     flex-direction: column;
   }
   picture.me {
@@ -223,7 +224,7 @@ code {
   position: absolute;
   opacity: 0.015;
   max-height: 100%;
-  width: 50%;
+  width: 125%;
   user-select: none;
   pointer-events: none;
   height: 100%;
@@ -244,7 +245,7 @@ code {
   }
 
   path {
-    animation: blob 80s linear infinite, rotate 80s linear infinite;
+    animation: blob 120s linear infinite, rotate 120s linear infinite;
   }
 }
 
