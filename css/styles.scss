@@ -15,6 +15,15 @@
   --timeline-flag-text: var(--gray);
   --timeline-time: var(--gray);
   --timeline-time-text: var(--white);
+  /* Spacing scale (4px base) */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --measure: 680px;
 }
 
 /* cursor */
@@ -120,6 +129,14 @@ h2,
 
 h1 {
   font-size: 2rem;
+  margin: var(--space-md) 0 var(--space-lg);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin: 0 0 var(--space-lg);
+  padding-bottom: var(--space-xs);
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -135,9 +152,22 @@ a {
 }
 
 section {
-  padding: 0 2rem 2rem;
+  padding: 0 2rem;
   margin: 0 auto;
-  max-width: 760px;
+  max-width: var(--measure);
+}
+
+#about {
+  padding-top: var(--space-xl);
+}
+
+#work {
+  margin-top: var(--space-2xl);
+}
+
+#contact {
+  margin-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
 }
 
 code {
@@ -145,7 +175,7 @@ code {
     "Courier New", monospace;
 }
 .img-wrap {
-  margin-top: 2rem;
+  margin-top: 0;
   display: flex;
 }
 .photo {
@@ -158,20 +188,25 @@ code {
 }
 .icons {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: right;
-  margin: 0.5rem 0 0;
-  padding: 0;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: flex-end;
+  gap: var(--space-lg);
+  width: 100%;
+  margin: var(--space-sm) 0 0;
+  padding: 0;
   a {
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    padding: 0 1rem;
-    font-weight: 600;
+    display: flex;
+    color: var(--white);
+    svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
     &:hover,
     &:focus {
-      transform: scale(1.1) translateX(-1rem);
+      transform: scale(1.15);
+      color: var(--link);
     }
   }
 }
@@ -193,29 +228,14 @@ code {
     margin-left: auto;
   }
   .photo {
-    width: 250px;
-    margin-top: 5rem;
+    width: 220px;
+    margin-top: var(--space-xs);
   }
   h1 {
     font-size: 2.5rem;
   }
   .icons {
-    flex-direction: row;
-    padding-left: 0;
-    margin: 1rem 0 0;
-    span:last-child {
-      margin-right: 0;
-    }
-    a {
-      padding: 0;
-      &:not(:last-child) {
-        margin-right: 1.5rem;
-      }
-      &:hover,
-      &:focus {
-        transform: scale(1.1) translateX(0rem);
-      }
-    }
+    margin: var(--space-md) 0 0;
   }
 }
 
@@ -296,9 +316,9 @@ code {
 .timeline {
   position: relative;
   width: 660px;
+  max-width: 100%;
   margin: 0 auto;
-  margin-top: 20px;
-  padding: 1em 0;
+  padding: var(--space-xs) 0;
   list-style-type: none;
 }
 

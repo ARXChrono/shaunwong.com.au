@@ -5,3 +5,7 @@ node_modules
 dist
 .cache
 .DS_Store
+
+# Compiled CSS (built from css/styles.scss)
+css/styles.css
+css/styles.css.map
