@@ -23,9 +23,9 @@
 ## Links
 
 - Website: https://shaunwong.com.au/
-- Tech Hero: https://techhero.com.au/
+- Tech Hero: https://www.techhero.com.au/
 - LinkedIn: https://www.linkedin.com/in/devshaun/
 
 ## Contact
 
-- Reach out via LinkedIn (https://www.linkedin.com/in/devshaun/) or through Tech Hero (https://techhero.com.au/)
+- Reach out via LinkedIn (https://www.linkedin.com/in/devshaun/) or through Tech Hero (https://www.techhero.com.au/)

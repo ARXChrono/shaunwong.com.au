@@ -143,6 +143,7 @@ a {
   color: var(--link);
   transition: all 0.18s ease;
   display: inline-flex;
+  text-decoration: none;
 
   &:hover,
   &:focus {
@@ -196,23 +197,100 @@ code {
   margin: var(--space-sm) 0 0;
   padding: 0;
   a {
+    position: relative;
     display: flex;
+    overflow: hidden;
     color: var(--white);
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4));
+    transition: filter 0.3s ease, transform 0.18s ease, color 0.18s ease;
     svg {
       width: 24px;
       height: 24px;
       display: block;
     }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.85) 50%,
+        transparent 65%
+      );
+      transform: translateX(-160%);
+      pointer-events: none;
+    }
     &:hover,
     &:focus {
       transform: scale(1.15);
       color: var(--link);
+      filter: drop-shadow(0 0 11px rgba(255, 215, 0, 0.85));
+    }
+    &:hover::after,
+    &:focus::after {
+      animation: iconShine 0.7s ease;
     }
   }
 }
 
 .gold {
   color: gold;
+}
+
+/* Accent links: glowing gold with a shine sweep on hover */
+.accent-link {
+  font-weight: 700;
+  color: var(--gold);
+  background-image: linear-gradient(
+    100deg,
+    gold 0%,
+    gold 40%,
+    #fffbe6 47%,
+    #ffffff 50%,
+    #fffbe6 53%,
+    gold 60%,
+    gold 100%
+  );
+  background-size: 300% 100%;
+  background-position: 0% 0;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 7px rgba(255, 215, 0, 0.5));
+  transition: filter 0.3s ease, transform 0.18s ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 13px rgba(255, 215, 0, 0.85));
+    animation: shine 0.9s ease;
+  }
+}
+
+@keyframes shine {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes iconShine {
+  to {
+    transform: translateX(160%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accent-link:hover,
+  .accent-link:focus,
+  .icons a:hover::after,
+  .icons a:focus::after {
+    animation: none;
+  }
 }
 
 @media only screen and (min-width: 35em) {
