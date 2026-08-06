@@ -1,0 +1,31 @@
+# Shaun Wong
+
+> Developer and founder of Tech Hero, based in Perth, Western Australia. Around a decade building web and mobile apps, most recently leading front-end engineering across global teams.
+
+## About
+
+- Developer and founder based in Perth, Australia
+- Runs Tech Hero
+- ~10 years building web and mobile apps
+- Focus: front-end engineering, product, web and mobile app development
+
+## Experience
+
+- Tech Hero — Founder (2024–present)
+- Bustle Tech — Full Stack Developer (2023–2024)
+- Berlitz — Global Technical Lead (2021–2023)
+- Berlitz — Global Senior Front-End Engineer (2020–2021)
+- Berlitz — Global Front-End Engineer (2018–2020)
+- Clue — Front-End Developer (2017–2018)
+- Cirrus Networks — I.T. Support (2016–2017)
+- Murdoch University — Bachelor of Digital Media (2016)
+
+## Links
+
+- Website: https://shaunwong.com.au/
+- Tech Hero: https://techhero.com.au/
+- LinkedIn: https://www.linkedin.com/in/devshaun/
+
+## Contact
+
+- Reach out via LinkedIn (https://www.linkedin.com/in/devshaun/) or through Tech Hero (https://techhero.com.au/)

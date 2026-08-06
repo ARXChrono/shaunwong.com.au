@@ -3,13 +3,10 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
+    Shaun Wong -- Developer & Founder -- @devShaun
+    Location: Perth, Western Australia
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    HTML5, CSS3 (Sass)
+    Parcel, Modernizr, Normalize.css
